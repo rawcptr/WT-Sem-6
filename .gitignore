@@ -2,6 +2,6 @@
 
 !/assignment-1/
 !/assignment-1/*.html
-!/assignment-1/*.txt
+!/assignment-1/readme.txt
 
 !.gitignore
