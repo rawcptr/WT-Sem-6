@@ -1,0 +1,7 @@
+*
+
+!/assignment-1/
+!/assignment-1/*.html
+!/assignment-1/*.txt
+
+!.gitignore

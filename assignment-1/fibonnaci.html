@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci Sequence Generator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .fibonacci-calculator {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #result {
+            margin-top: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="fibonacci-calculator">
+        <h2>Fibonacci Sequence Generator</h2>
+        <input type="number" id="terms" placeholder="Number of Terms" min="1" max="100">
+        <button onclick="generateFibonacci()">Generate Sequence</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function generateFibonacci() {
+            const termsInput = document.getElementById('terms');
+            const resultEl = document.getElementById('result');
+            const n = parseInt(termsInput.value);
+
+            // Input validation
+            if (isNaN(n) || n < 1 || n > 100) {
+                resultEl.textContent = 'Please enter a valid number of terms (1-100)';
+                return;
+            }
+
+            // Generate Fibonacci sequence
+            const fibonacci = [0, 1];
+            for (let i = 2; i < n; i++) {
+                fibonacci.push(fibonacci[i-1] + fibonacci[i-2]);
+            }
+
+            // Display the sequence
+            resultEl.textContent = fibonacci.slice(0, n).join(', ');
+        }
+    </script>
+</body>
+</html>
