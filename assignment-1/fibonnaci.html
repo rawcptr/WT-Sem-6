@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Fibonacci Sequence Generator</title>
@@ -12,19 +13,23 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
         }
+
         .fibonacci-calculator {
             background-color: white;
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-        input, button {
+
+        input,
+        button {
             margin: 10px 0;
             padding: 10px;
             width: 100%;
             box-sizing: border-box;
         }
+
         #result {
             margin-top: 10px;
             max-height: 300px;
@@ -32,6 +37,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="fibonacci-calculator">
         <h2>Fibonacci Sequence Generator</h2>
@@ -46,21 +52,19 @@
             const resultEl = document.getElementById('result');
             const n = parseInt(termsInput.value);
 
-            // Input validation
             if (isNaN(n) || n < 1 || n > 100) {
                 resultEl.textContent = 'Please enter a valid number of terms (1-100)';
                 return;
             }
 
-            // Generate Fibonacci sequence
             const fibonacci = [0, 1];
             for (let i = 2; i < n; i++) {
-                fibonacci.push(fibonacci[i-1] + fibonacci[i-2]);
+                fibonacci.push(fibonacci[i - 1] + fibonacci[i - 2]);
             }
 
-            // Display the sequence
             resultEl.textContent = fibonacci.slice(0, n).join(', ');
         }
     </script>
 </body>
+
 </html>
